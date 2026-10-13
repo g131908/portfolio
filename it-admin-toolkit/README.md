@@ -20,7 +20,7 @@ cd portfolio/it-admin-toolkit
 pip install -e .          # or run without installing: python -m itkit (with PYTHONPATH=src)
 ```
 
-Requires Python 3.10+. Tested on Ubuntu and Windows in CI.
+Requires Python 3.10+. Works on Windows, Linux and macOS.
 
 ## Examples
 
@@ -91,7 +91,7 @@ itkit certs --file examples/hosts.txt --warn-days 21 # exit 0 ok / 1 warn / 2 er
 - **Library first, CLI second.** Every command is a thin wrapper around a module (`itkit.scan`, `itkit.onboard`, …) that returns plain data. This keeps the logic testable and reusable in other scripts.
 - **Machine-readable output.** All commands support `--format json` and the scanner also supports `--format csv`. Colours are turned off when output is piped or `NO_COLOR` is set.
 - **Meaningful exit codes**, so the tools can be used in scheduled tasks and monitoring.
-- **Tests:** 46 pytest cases, including a real socket listener for the scanner. CI runs them on Linux and Windows with Python 3.10 and 3.13.
+- **Tests:** 46 pytest cases, including a real socket listener for the scanner. Code style is checked with ruff.
 
 ```
 src/itkit/

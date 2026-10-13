@@ -6,7 +6,7 @@ Media Informatics student at Berliner Hochschule für Technik (BHT). I'm interes
 |---|---|---|---|
 | [**PAD-16 Sampler**](pad-sampler/) | 16-pad sampler and step sequencer in the browser, with synthesized drum kits, effects and drag-and-drop samples | JavaScript, Web Audio API, Canvas | [Open](https://g131908.github.io/portfolio/pad-sampler/) |
 | [**Campus Companion**](campus-app/) | Mobile-first campus app: today view, timetable with clash detection and iCal export, Mensa menu, free-room finder | HTML, CSS, JavaScript, PWA | [Open](https://g131908.github.io/portfolio/campus-app/?now=2026-10-12T09:40) |
-| [**itkit**](it-admin-toolkit/) | Command-line toolkit for IT admins: network scan, inventory, AD/Linux onboarding, SSH brute-force detection, certificate monitoring | Python (stdlib only), pytest, GitHub Actions | CLI |
+| [**itkit**](it-admin-toolkit/) | Command-line toolkit for IT admins: network scan, inventory, AD/Linux onboarding, SSH brute-force detection, certificate monitoring | Python (stdlib only), pytest | CLI |
 
 <p>
   <a href="pad-sampler/"><img src="pad-sampler/docs/screenshot.png" width="49%" alt="PAD-16 sampler"></a>
@@ -18,7 +18,7 @@ Media Informatics student at Berliner Hochschule für Technik (BHT). I'm interes
 - **Audio and real-time programming:** sound synthesis, sample-accurate scheduling, an effects signal chain (PAD-16).
 - **UI/UX and front-end:** responsive layouts, accessibility, dark mode, offline-capable PWA, no framework required (Campus Companion).
 - **IT administration and automation:** networking, Active Directory/Linux user provisioning, log analysis, monitoring-friendly exit codes (itkit).
-- **Engineering practice:** unit tests for the core logic of every project, CI on Linux and Windows, readable commit history and documentation.
+- **Engineering practice:** unit tests for the core logic of every project, readable commit history and documentation.
 
 ## Run everything locally
 
