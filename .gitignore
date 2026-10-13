@@ -1,0 +1,9 @@
+node_modules/
+__pycache__/
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.venv/
+.DS_Store
+Thumbs.db
+onboarding_out/
