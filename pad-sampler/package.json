@@ -1,0 +1,12 @@
+{
+  "name": "pad16-sampler",
+  "version": "1.0.0",
+  "description": "16-pad sampler and step sequencer for the browser, built on the Web Audio API",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "start": "npx --yes serve -l 5173 .",
+    "test": "node --test test/*.test.js"
+  },
+  "license": "MIT"
+}
