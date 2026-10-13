@@ -1,0 +1,174 @@
+:root {
+  --bg: #1b1c1f;
+  --body: #2a2c30;
+  --body-edge: #3a3d42;
+  --pad: #3b3e44;
+  --pad-top: #484b52;
+  --pad-on: #ff7a1a;
+  --text: #e8e6e1;
+  --muted: #9a9890;
+  --accent: #ff7a1a;
+  --lcd: #11261a;
+  --lcd-ink: #8dffb0;
+  --radius: 10px;
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: radial-gradient(ellipse at top, #2b2d33, var(--bg) 70%);
+  color: var(--text);
+  display: flex;
+  justify-content: center;
+  padding: 24px 16px;
+}
+
+.device {
+  width: 100%;
+  max-width: 980px;
+  background: linear-gradient(180deg, var(--body-edge), var(--body) 8%);
+  border-radius: 18px;
+  padding: 22px;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, .55), inset 0 1px 0 rgba(255, 255, 255, .08);
+}
+
+/* --- header / display --------------------------------------------------- */
+
+.top { display: flex; gap: 20px; align-items: stretch; flex-wrap: wrap; }
+.brand { display: flex; flex-direction: column; justify-content: center; }
+.logo { font-weight: 800; font-size: 28px; letter-spacing: .08em; color: var(--accent); }
+.sub { font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: .2em; }
+
+.display {
+  flex: 1;
+  min-width: 240px;
+  background: var(--lcd);
+  border-radius: 6px;
+  padding: 10px 14px;
+  font-family: "JetBrains Mono", ui-monospace, Consolas, monospace;
+  color: var(--lcd-ink);
+  text-shadow: 0 0 6px rgba(141, 255, 176, .45);
+  box-shadow: inset 0 2px 8px rgba(0, 0, 0, .6);
+}
+.display-row { font-size: 20px; min-height: 28px; white-space: nowrap; overflow: hidden; }
+.display-row.small { font-size: 12px; display: flex; justify-content: space-between; opacity: .8; }
+
+/* --- transport ---------------------------------------------------------- */
+
+.controls {
+  display: flex; flex-wrap: wrap; gap: 10px; align-items: center;
+  margin: 18px 0;
+}
+.btn {
+  background: var(--pad);
+  color: var(--text);
+  border: 1px solid #50535a;
+  border-radius: 6px;
+  padding: 8px 14px;
+  font: inherit;
+  font-size: 14px;
+  cursor: pointer;
+}
+.btn:hover:not(:disabled) { background: var(--pad-top); }
+.btn:disabled { opacity: .4; cursor: not-allowed; }
+.btn.primary { background: var(--accent); border-color: var(--accent); color: #1b1c1f; font-weight: 700; }
+.btn[aria-pressed="true"] { background: var(--accent); color: #1b1c1f; }
+.file-btn { display: inline-block; }
+
+.field { display: flex; align-items: center; gap: 6px; font-size: 13px; color: var(--muted); }
+.field input[type="number"], .field select {
+  background: #1f2023; color: var(--text); border: 1px solid #50535a; border-radius: 6px;
+  padding: 6px 8px; font: inherit; width: 80px;
+}
+.field select { width: auto; }
+
+/* --- pads --------------------------------------------------------------- */
+
+.body { display: grid; grid-template-columns: 1fr 260px; gap: 20px; }
+
+.pads {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.pad {
+  position: relative;
+  aspect-ratio: 1;
+  border: none;
+  border-radius: var(--radius);
+  background: linear-gradient(180deg, var(--pad-top), var(--pad));
+  box-shadow: 0 4px 0 #1e1f22, inset 0 1px 0 rgba(255, 255, 255, .1);
+  color: var(--text);
+  cursor: pointer;
+  user-select: none;
+  touch-action: manipulation;
+  transition: transform .04s;
+}
+.pad:active { transform: translateY(2px); box-shadow: 0 2px 0 #1e1f22; }
+.pad.selected { outline: 2px solid var(--accent); outline-offset: 2px; }
+.pad.has-steps::after {
+  content: ""; position: absolute; top: 8px; right: 8px;
+  width: 6px; height: 6px; border-radius: 50%; background: var(--accent);
+}
+.pad.drop { outline: 2px dashed var(--lcd-ink); }
+.pad.hit { animation: hit .22s ease-out; }
+@keyframes hit {
+  from { background: var(--pad-on); box-shadow: 0 0 24px var(--pad-on); }
+  to { background: linear-gradient(180deg, var(--pad-top), var(--pad)); }
+}
+.pad-key { position: absolute; top: 8px; left: 10px; font-size: 11px; color: var(--muted); }
+.pad-name { position: absolute; bottom: 8px; left: 10px; right: 10px; font-size: 12px; text-align: left;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+/* --- fx ----------------------------------------------------------------- */
+
+.fx {
+  background: #232428;
+  border-radius: var(--radius);
+  padding: 14px;
+  display: flex; flex-direction: column; gap: 12px;
+}
+.fx h2, .seq h2 { margin: 0; font-size: 13px; letter-spacing: .2em; text-transform: uppercase; color: var(--muted); }
+.knob { display: grid; grid-template-columns: 1fr auto; gap: 4px; font-size: 13px; }
+.knob output { color: var(--accent); font-variant-numeric: tabular-nums; }
+.knob input { grid-column: 1 / -1; width: 100%; }
+input[type="range"] { accent-color: var(--accent); }
+#scope { width: 100%; height: 70px; background: var(--lcd); border-radius: 6px; margin-top: auto; }
+
+/* --- sequencer ---------------------------------------------------------- */
+
+.seq { margin-top: 22px; }
+.seq-head { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 8px; }
+.hint { margin: 0; font-size: 12px; color: var(--muted); }
+.steps { display: grid; grid-template-columns: repeat(16, 1fr); gap: 6px; margin-top: 10px; }
+.step {
+  height: 38px;
+  border: none;
+  border-radius: 5px;
+  background: var(--pad);
+  cursor: pointer;
+  box-shadow: inset 0 -3px 0 rgba(0, 0, 0, .25);
+}
+.step.beat { background: #45484f; }
+.step.on { background: #c75d12; }
+.step.accent { background: var(--accent); box-shadow: 0 0 10px rgba(255, 122, 26, .6); }
+.step.playhead { outline: 2px solid var(--lcd-ink); outline-offset: 1px; }
+
+.foot { margin-top: 18px; font-size: 12px; color: var(--muted); }
+kbd {
+  background: #1f2023; border: 1px solid #50535a; border-radius: 4px;
+  padding: 1px 5px; font-family: ui-monospace, monospace; font-size: 11px;
+}
+
+button:focus-visible, input:focus-visible, select:focus-visible { outline: 2px solid var(--lcd-ink); outline-offset: 2px; }
+
+@media (max-width: 760px) {
+  .body { grid-template-columns: 1fr; }
+  .steps { grid-template-columns: repeat(8, 1fr); }
+  .device { padding: 14px; }
+}
