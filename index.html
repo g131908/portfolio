@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Markos Kontogiorgos · Projects</title>
+  <meta name="description" content="Portfolio projects by Markos Kontogiorgos: browser sampler, campus app, IT admin toolkit.">
+  <style>
+    :root { --bg:#f7f7f5; --card:#fff; --text:#16181a; --muted:#5f6670; --line:#e3e5e8; --accent:#0f766e; color-scheme: light; }
+    @media (prefers-color-scheme: dark) { :root { --bg:#111315; --card:#1a1d20; --text:#eceef0; --muted:#a0a7b0; --line:#2b3035; --accent:#2dd4bf; color-scheme: dark; } }
+    * { box-sizing: border-box; }
+    body { margin:0; background:var(--bg); color:var(--text); font:16px/1.55 system-ui,-apple-system,"Segoe UI",sans-serif; }
+    main { max-width: 960px; margin: 0 auto; padding: 56px 16px; }
+    h1 { font-size: clamp(1.8rem, 5vw, 2.6rem); margin: 0 0 8px; letter-spacing: -.02em; }
+    .lead { color: var(--muted); max-width: 60ch; margin: 0 0 40px; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 18px; }
+    .card { background: var(--card); border: 1px solid var(--line); border-radius: 16px; overflow: hidden; display: flex; flex-direction: column; text-decoration: none; color: inherit; transition: transform .15s, border-color .15s; }
+    .card:hover { transform: translateY(-2px); border-color: var(--accent); }
+    .card img { width: 100%; aspect-ratio: 16/10; object-fit: cover; object-position: top; border-bottom: 1px solid var(--line); background: var(--line); }
+    .card .term { aspect-ratio: 16/10; background: #0d1117; color: #c9d1d9; font: 12px/1.6 ui-monospace, Consolas, monospace; padding: 16px; white-space: pre; overflow: hidden; margin: 0; }
+    .body { padding: 16px 18px 20px; }
+    h2 { margin: 0 0 6px; font-size: 1.15rem; }
+    p { margin: 0; color: var(--muted); }
+    .stack { margin-top: 12px; font-size: .82rem; color: var(--accent); font-weight: 600; }
+    footer { margin-top: 48px; color: var(--muted); font-size: .9rem; }
+    a.inline { color: var(--accent); }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Markos Kontogiorgos</h1>
+    <p class="lead">Media Informatics student at BHT Berlin. These projects cover audio programming, interface design and IT automation.</p>
+    <div class="grid">
+      <a class="card" href="pad-sampler/">
+        <img src="pad-sampler/docs/screenshot.png" alt="" loading="lazy">
+        <div class="body"><h2>PAD-16 Sampler</h2><p>16-pad sampler and step sequencer with synthesized kits, effects and your own samples.</p><div class="stack">Web Audio API · JavaScript</div></div>
+      </a>
+      <a class="card" href="campus-app/?now=2026-10-12T09:40">
+        <img src="campus-app/docs/today.png" alt="" loading="lazy">
+        <div class="body"><h2>Campus Companion</h2><p>Timetable with clash detection, Mensa menu and a free-room finder. Mobile-first and offline-capable.</p><div class="stack">HTML · CSS · JavaScript · PWA</div></div>
+      </a>
+      <a class="card" href="https://github.com/g131908/portfolio/tree/main/it-admin-toolkit">
+<pre class="term">$ itkit authlog /var/log/auth.log
+
+SUSPICIOUS IP  FAILURES  USERNAMES TRIED
+203.0.113.45   6         admin, deploy, root
+198.51.100.7   5         deploy, oracle, root
+
+!! deploy logged in from 198.51.100.7
+   after repeated failures</pre>
+        <div class="body"><h2>itkit</h2><p>CLI for IT admins: network scan, inventory, AD onboarding, SSH log analysis, certificate checks.</p><div class="stack">Python · pytest · CI</div></div>
+      </a>
+    </div>
+    <footer>Source code: <a class="inline" href="https://github.com/g131908/portfolio">github.com/g131908/portfolio</a></footer>
+  </main>
+</body>
+</html>
