@@ -1,0 +1,4 @@
+# one host per line, optional :port
+github.com
+expired.badssl.com
+www.bht-berlin.de
