@@ -1,0 +1,36 @@
+{
+  "buildings": [
+    { "id": "A", "name": "Building A", "label": "Lecture halls", "x": 40, "y": 40, "w": 120, "h": 70 },
+    { "id": "B", "name": "Building B", "label": "Computer science", "x": 190, "y": 40, "w": 90, "h": 120 },
+    { "id": "C", "name": "Building C", "label": "Media & design", "x": 40, "y": 140, "w": 120, "h": 60 },
+    { "id": "D", "name": "Building D", "label": "Library & Mensa", "x": 190, "y": 190, "w": 90, "h": 60 }
+  ],
+  "rooms": [
+    { "id": "A001", "building": "A", "floor": 0, "seats": 220, "type": "Lecture hall", "features": ["projector", "mic"] },
+    { "id": "A105", "building": "A", "floor": 1, "seats": 120, "type": "Lecture hall", "features": ["projector"] },
+    { "id": "A210", "building": "A", "floor": 2, "seats": 40, "type": "Seminar", "features": ["whiteboard"] },
+    { "id": "B012", "building": "B", "floor": 0, "seats": 30, "type": "PC lab", "features": ["pcs", "projector"] },
+    { "id": "B114", "building": "B", "floor": 1, "seats": 30, "type": "PC lab", "features": ["pcs", "projector"] },
+    { "id": "B201", "building": "B", "floor": 2, "seats": 12, "type": "Group room", "features": ["screen", "whiteboard"] },
+    { "id": "B202", "building": "B", "floor": 2, "seats": 12, "type": "Group room", "features": ["screen"] },
+    { "id": "C010", "building": "C", "floor": 0, "seats": 24, "type": "Media lab", "features": ["macs", "audio"] },
+    { "id": "C102", "building": "C", "floor": 1, "seats": 8, "type": "Recording studio", "features": ["audio"] },
+    { "id": "C120", "building": "C", "floor": 1, "seats": 35, "type": "Seminar", "features": ["projector", "whiteboard"] },
+    { "id": "D100", "building": "D", "floor": 1, "seats": 6, "type": "Study room", "features": ["screen"] },
+    { "id": "D101", "building": "D", "floor": 1, "seats": 6, "type": "Study room", "features": [] }
+  ],
+  "bookings": [
+    { "room": "A001", "day": 1, "start": "08:00", "end": "11:15", "title": "Mathematics 1" },
+    { "room": "A001", "day": 3, "start": "12:15", "end": "13:45", "title": "Theoretical CS" },
+    { "room": "A105", "day": 2, "start": "10:00", "end": "11:30", "title": "Programming 1" },
+    { "room": "A105", "day": 4, "start": "14:15", "end": "15:45", "title": "Media Design" },
+    { "room": "B012", "day": 1, "start": "12:15", "end": "15:45", "title": "Programming 1 Lab" },
+    { "room": "B012", "day": 5, "start": "08:00", "end": "09:30", "title": "Networks Lab" },
+    { "room": "B114", "day": 2, "start": "14:15", "end": "17:30", "title": "Web Tech Lab" },
+    { "room": "B201", "day": 3, "start": "10:00", "end": "11:30", "title": "Project meeting" },
+    { "room": "C010", "day": 4, "start": "08:00", "end": "11:15", "title": "Media Design Lab" },
+    { "room": "C102", "day": 2, "start": "12:15", "end": "15:45", "title": "Audio Production" },
+    { "room": "C120", "day": 1, "start": "16:00", "end": "17:30", "title": "Generative Design" },
+    { "room": "D100", "day": 5, "start": "10:00", "end": "12:00", "title": "Booked" }
+  ]
+}

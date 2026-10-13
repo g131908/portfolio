@@ -1,0 +1,12 @@
+{
+  "name": "campus-companion",
+  "version": "1.0.0",
+  "description": "Mobile-first campus app prototype: timetable, cafeteria menu and free-room finder",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "start": "npx --yes serve -l 5174 .",
+    "test": "node --test test/*.test.js"
+  },
+  "license": "MIT"
+}

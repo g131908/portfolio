@@ -1,0 +1,30 @@
+{
+  "currency": "EUR",
+  "days": {
+    "1": [
+      { "name": "Lentil dal with basmati rice", "tags": ["vegan"], "prices": [2.10, 3.90, 4.90], "allergens": ["mustard"], "co2": "A" },
+      { "name": "Pasta with tomato-basil sauce and parmesan", "tags": ["vegetarian"], "prices": [1.90, 3.50, 4.50], "allergens": ["gluten", "milk"], "co2": "A" },
+      { "name": "Chicken schnitzel with potato salad", "tags": [], "prices": [3.20, 5.40, 6.60], "allergens": ["gluten", "egg", "mustard"], "co2": "C" }
+    ],
+    "2": [
+      { "name": "Falafel bowl with hummus and bulgur", "tags": ["vegan"], "prices": [2.40, 4.20, 5.20], "allergens": ["gluten", "sesame"], "co2": "A" },
+      { "name": "Spinach-feta pie with Greek salad", "tags": ["vegetarian"], "prices": [2.60, 4.40, 5.40], "allergens": ["gluten", "milk", "egg"], "co2": "B" },
+      { "name": "Chili con carne with rice", "tags": [], "prices": [2.90, 4.90, 5.90], "allergens": [], "co2": "D" }
+    ],
+    "3": [
+      { "name": "Vegetable curry with jasmine rice", "tags": ["vegan"], "prices": [2.20, 4.00, 5.00], "allergens": ["celery"], "co2": "A" },
+      { "name": "Cheese spätzle with fried onions", "tags": ["vegetarian"], "prices": [2.50, 4.30, 5.30], "allergens": ["gluten", "milk", "egg"], "co2": "B" },
+      { "name": "Salmon fillet with dill potatoes", "tags": ["fish"], "prices": [3.80, 6.20, 7.40], "allergens": ["fish", "milk"], "co2": "C" }
+    ],
+    "4": [
+      { "name": "Gemista – stuffed peppers with rice", "tags": ["vegan"], "prices": [2.30, 4.10, 5.10], "allergens": [], "co2": "A" },
+      { "name": "Mushroom risotto", "tags": ["vegetarian"], "prices": [2.40, 4.20, 5.20], "allergens": ["milk"], "co2": "B" },
+      { "name": "Currywurst with fries", "tags": [], "prices": [2.20, 3.90, 4.90], "allergens": ["mustard", "celery"], "co2": "C" }
+    ],
+    "5": [
+      { "name": "Sweet potato burger with wedges", "tags": ["vegan"], "prices": [2.80, 4.60, 5.60], "allergens": ["gluten", "soy"], "co2": "A" },
+      { "name": "Pizza margherita", "tags": ["vegetarian"], "prices": [2.20, 3.90, 4.90], "allergens": ["gluten", "milk"], "co2": "B" },
+      { "name": "Fish & chips with remoulade", "tags": ["fish"], "prices": [3.40, 5.60, 6.80], "allergens": ["fish", "gluten", "egg"], "co2": "C" }
+    ]
+  }
+}

@@ -1,0 +1,8 @@
+[
+  { "id": "c1", "title": "Mathematics 1", "type": "Lecture", "day": 1, "start": "08:00", "end": "11:15", "room": "A001", "color": 0 },
+  { "id": "c2", "title": "Programming 1 (Java)", "type": "Lab", "day": 1, "start": "12:15", "end": "15:45", "room": "B012", "color": 1 },
+  { "id": "c3", "title": "Programming 1 (Java)", "type": "Lecture", "day": 2, "start": "10:00", "end": "11:30", "room": "A105", "color": 1 },
+  { "id": "c4", "title": "Theoretical Computer Science", "type": "Lecture", "day": 3, "start": "12:15", "end": "13:45", "room": "A001", "color": 2 },
+  { "id": "c5", "title": "Media Design", "type": "Lab", "day": 4, "start": "08:00", "end": "11:15", "room": "C010", "color": 3 },
+  { "id": "c6", "title": "Media Design", "type": "Seminar", "day": 4, "start": "14:15", "end": "15:45", "room": "A105", "color": 3 }
+]
