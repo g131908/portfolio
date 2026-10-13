@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PAD-16 · Browser Sampler</title>
+  <meta name="description" content="A 16-pad sampler and step sequencer built with the Web Audio API.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 16 16%22%3E%3Crect width=%2216%22 height=%2216%22 rx=%223%22 fill=%22%23ff7a1a%22/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="src/styles.css">
+</head>
+<body>
+  <main class="device" aria-label="PAD-16 sampler">
+    <header class="top">
+      <div class="brand">
+        <span class="logo">PAD-16</span>
+        <span class="sub">sampler / sequencer</span>
+      </div>
+      <div class="display" aria-live="polite">
+        <div class="display-row"><span id="disp-main">PRESS START</span></div>
+        <div class="display-row small">
+          <span id="disp-pad">PAD --</span>
+          <span id="disp-bpm">90 BPM</span>
+          <span id="disp-step">STEP --</span>
+        </div>
+      </div>
+    </header>
+
+    <section class="controls" aria-label="Transport">
+      <button id="btn-start" class="btn primary">Start audio</button>
+      <button id="btn-play" class="btn" disabled aria-pressed="false">▶ Play</button>
+      <button id="btn-clear" class="btn" disabled>Clear pattern</button>
+      <label class="field">BPM
+        <input id="bpm" type="number" min="40" max="220" value="90">
+      </label>
+      <label class="field">Swing
+        <input id="swing" type="range" min="0" max="60" value="12">
+      </label>
+      <label class="field">Kit
+        <select id="kit">
+          <option value="boom">Boom Bap</option>
+          <option value="lofi">Lo-Fi</option>
+        </select>
+      </label>
+      <button id="btn-export" class="btn" disabled>Export</button>
+      <label class="btn file-btn">Import
+        <input id="file-import" type="file" accept="application/json" hidden>
+      </label>
+    </section>
+
+    <section class="body">
+      <div class="pads" id="pads" role="group" aria-label="Pads"></div>
+
+      <aside class="fx" aria-label="Effects">
+        <h2>FX</h2>
+        <label class="knob">Filter <output id="out-filter">open</output>
+          <input id="fx-filter" type="range" min="0" max="100" value="100">
+        </label>
+        <label class="knob">Delay <output id="out-delay">0%</output>
+          <input id="fx-delay" type="range" min="0" max="100" value="0">
+        </label>
+        <label class="knob">Reverb <output id="out-reverb">10%</output>
+          <input id="fx-reverb" type="range" min="0" max="100" value="10">
+        </label>
+        <label class="knob">Crush <output id="out-crush">0%</output>
+          <input id="fx-crush" type="range" min="0" max="100" value="0">
+        </label>
+        <label class="knob">Volume <output id="out-volume">80%</output>
+          <input id="fx-volume" type="range" min="0" max="100" value="80">
+        </label>
+        <canvas id="scope" width="240" height="70" aria-label="Oscilloscope"></canvas>
+      </aside>
+    </section>
+
+    <section class="seq" aria-label="Step sequencer">
+      <div class="seq-head">
+        <h2>Sequencer · <span id="seq-pad-name">Pad 1</span></h2>
+        <p class="hint">Select a pad, then toggle steps. Shift-click a step for an accent.</p>
+      </div>
+      <div class="steps" id="steps"></div>
+    </section>
+
+    <footer class="foot">
+      <p>Keys: <kbd>1 2 3 4</kbd> <kbd>Q W E R</kbd> <kbd>A S D F</kbd> <kbd>Z X C V</kbd> · <kbd>Space</kbd> play/stop ·
+        drop an audio file onto a pad to replace its sound.</p>
+    </footer>
+  </main>
+  <script type="module" src="src/main.js"></script>
+</body>
+</html>
