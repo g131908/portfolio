@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Transit Agent · Berlin</title>
+  <meta name="description" content="Live Berlin public transport departures, trip planning with bike advice, and an AI agent with tool calling.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23f5c400'/%3E%3Cpath d='M9 22V10h8a4 4 0 010 8h-4m4 0l4 4' stroke='%23111' stroke-width='3' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="top">
+    <div class="brand">
+      <span class="logo" aria-hidden="true">T</span>
+      <div>
+        <h1>Transit Agent <span class="city">Berlin</span></h1>
+        <p class="tagline">Live VBB data · trip planning · AI agent with tool calling</p>
+      </div>
+    </div>
+    <div class="top-right">
+      <span class="health" id="health" title="Dependency health"><span class="dot"></span><span id="health-text">checking…</span></span>
+      <time class="clock" id="clock" aria-label="Current time in Berlin"></time>
+    </div>
+  </header>
+
+  <nav class="tabs" role="tablist" aria-label="Sections">
+    <button role="tab" id="tab-departures" aria-controls="panel-departures" aria-selected="true">Departures</button>
+    <button role="tab" id="tab-route" aria-controls="panel-route" aria-selected="false">Route &amp; bike</button>
+    <button role="tab" id="tab-agent" aria-controls="panel-agent" aria-selected="false">Ask the agent</button>
+    <button role="tab" id="tab-system" aria-controls="panel-system" aria-selected="false">System</button>
+  </nav>
+
+  <main id="main">
+    <section class="panel" id="panel-departures" role="tabpanel" aria-labelledby="tab-departures"></section>
+    <section class="panel" id="panel-route" role="tabpanel" aria-labelledby="tab-route" hidden></section>
+    <section class="panel" id="panel-agent" role="tabpanel" aria-labelledby="tab-agent" hidden></section>
+    <section class="panel" id="panel-system" role="tabpanel" aria-labelledby="tab-system" hidden></section>
+  </main>
+
+  <footer class="foot">
+    Data: <a href="https://v6.vbb.transport.rest/" rel="noopener">VBB transport.rest</a> ·
+    <a href="https://open-meteo.com/" rel="noopener">Open-Meteo</a> ·
+    <a href="https://github.com/g131908/portfolio/tree/main/transit-agent" rel="noopener">Source code</a>
+  </footer>
+  <script type="module" src="./main.ts"></script>
+</body>
+</html>
