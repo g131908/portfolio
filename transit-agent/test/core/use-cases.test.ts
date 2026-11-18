@@ -33,7 +33,7 @@ class FakeTransit implements TransitGateway {
 }
 
 const weatherOk: WeatherGateway = {
-  async current() { return obs<WeatherNow>({ temperatureC: 12, precipitationMm: 0, precipitationProbability: 5, windKmh: 8, description: 'clear sky' }); },
+  async current() { return obs<WeatherNow>({ temperatureC: 12, precipitationMm: 0, precipitationProbability: 5, windKmh: 8, weatherCode: 1, description: 'clear sky' }); },
 };
 const weatherDown: WeatherGateway = { async current() { throw new Error('down'); } };
 

@@ -38,6 +38,7 @@ export class OpenMeteoWeatherGateway implements WeatherGateway {
           precipitationMm: c.precipitation,
           precipitationProbability: probs.length ? Math.max(...probs) : 0,
           windKmh: c.wind_speed_10m,
+          weatherCode: c.weather_code,
           description: describeWeatherCode(c.weather_code),
         },
       };

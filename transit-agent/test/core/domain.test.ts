@@ -56,7 +56,7 @@ describe('bike or transit policy', () => {
   // BHT (Wedding) -> Alexanderplatz, ~4.3 km straight line
   const bht = { latitude: 52.5447, longitude: 13.3517 };
   const alex = { latitude: 52.5215, longitude: 13.4113 };
-  const fine: WeatherNow = { temperatureC: 14, precipitationMm: 0, precipitationProbability: 10, windKmh: 10, description: 'clear sky' };
+  const fine: WeatherNow = { temperatureC: 14, precipitationMm: 0, precipitationProbability: 10, windKmh: 10, weatherCode: 0, description: 'clear sky' };
 
   it('estimates city cycling time with a detour factor', () => {
     expect(estimateBikeMinutes(bht, alex)).toBeGreaterThanOrEqual(18);
@@ -79,6 +79,12 @@ describe('bike or transit policy', () => {
     const a = adviseMobility({ from: bht, to: alex, transitMinutes: 60, weather: rainy });
     expect(a.mode).toBe('transit');
     expect(a.reasons.join()).toMatch(/80% chance of rain/);
+  });
+
+  it('treats a rain weather code as rain even when the gauge shows 0 mm', () => {
+    const a = adviseMobility({ from: bht, to: alex, transitMinutes: 60, weather: { ...fine, weatherCode: 61, description: 'rain' } });
+    expect(a.mode).toBe('transit');
+    expect(a.reasons).toContain('current conditions: rain');
   });
 
   it.each([

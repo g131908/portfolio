@@ -10,6 +10,8 @@ export interface WeatherNow {
   /** Highest precipitation probability in the next hour, 0..100. */
   readonly precipitationProbability: number;
   readonly windKmh: number;
+  /** WMO weather interpretation code reported for right now. */
+  readonly weatherCode: number;
   readonly description: string;
 }
 
@@ -53,6 +55,7 @@ export function adviseMobility(input: MobilityInput): MobilityAdvice {
   if (bikeMinutes > MAX_REASONABLE_BIKE_MIN) against.push(`${bikeMinutes} min by bike is a long ride`);
   if (weather) {
     if (weather.precipitationMm >= RAIN_MM_LIMIT) against.push(`it is raining (${weather.precipitationMm} mm)`);
+    else if (isPrecipitationCode(weather.weatherCode)) against.push(`current conditions: ${weather.description}`);
     else if (weather.precipitationProbability >= RAIN_PROBABILITY_LIMIT) {
       against.push(`${weather.precipitationProbability}% chance of rain in the next hour`);
     }
@@ -80,6 +83,11 @@ export function adviseMobility(input: MobilityInput): MobilityAdvice {
     return { mode: 'bike', bikeMinutes, transitMinutes, reasons: [`the bike is ${diff} min faster`, ...weatherNote] };
   }
   return { mode: 'transit', bikeMinutes, transitMinutes, reasons: [`public transport is ${-diff} min faster`] };
+}
+
+/** Drizzle, rain, showers, snow or thunderstorm, even if the gauge still shows 0 mm. */
+export function isPrecipitationCode(code: number): boolean {
+  return (code >= 51 && code <= 67) || (code >= 71 && code <= 86) || code >= 95;
 }
 
 /** WMO weather interpretation codes -> short English text. */

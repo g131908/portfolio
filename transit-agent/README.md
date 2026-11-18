@@ -72,7 +72,7 @@ External data is never trusted. Every response is validated with zod before it r
 npm test
 ```
 
-57 tests with Vitest, no network required:
+58 tests with Vitest, no network required:
 
 - **Domain and use cases** with in-memory fakes (punctuality, journeys, bike policy, board summary, graceful degradation when the weather service is down)
 - **Resilience:** retry and backoff, `Retry-After`, timeouts, circuit breaker open/half-open/closed, stale-if-error, single-flight, LRU bound, time budget
