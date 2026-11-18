@@ -8,5 +8,5 @@
     "start": "npx --yes serve -l 5173 .",
     "test": "node --test test/*.test.js"
   },
-  "license": "MIT"
+  "license": "UNLICENSED"
 }

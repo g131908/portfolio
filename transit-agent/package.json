@@ -4,7 +4,7 @@
   "description": "Live Berlin public transport data as an AI agent, an MCP server and a web dashboard",
   "type": "module",
   "private": true,
-  "license": "MIT",
+  "license": "UNLICENSED",
   "bin": {
     "berlin-transit-mcp": "dist/mcp-server.js"
   },

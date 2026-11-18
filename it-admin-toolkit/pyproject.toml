@@ -8,9 +8,10 @@ version = "1.0.0"
 description = "Dependency-free command-line tools for everyday IT administration"
 readme = "README.md"
 requires-python = ">=3.10"
-license = { text = "MIT" }
+license = { text = "Proprietary, all rights reserved" }
 authors = [{ name = "Markos Kontogiorgos" }]
 classifiers = [
+  "License :: Other/Proprietary License",
   "Environment :: Console",
   "Intended Audience :: System Administrators",
   "Programming Language :: Python :: 3",

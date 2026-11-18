@@ -62,4 +62,4 @@ Vanilla JavaScript (ES modules), Web Audio API, Canvas 2D, CSS Grid. Works in al
 
 ## License
 
-MIT
+Copyright © 2026 Markos Kontogiorgos. All rights reserved. The code is public for viewing and evaluation only; see [LICENSE](../LICENSE).

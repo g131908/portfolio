@@ -76,4 +76,4 @@ The room, menu and course data are sample data for the prototype.
 
 ## License
 
-MIT
+Copyright © 2026 Markos Kontogiorgos. All rights reserved. The code is public for viewing and evaluation only; see [LICENSE](../LICENSE).
