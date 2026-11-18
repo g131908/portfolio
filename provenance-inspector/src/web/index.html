@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Provenance Inspector</title>
+  <meta name="description" content="Check files and images for disguised malware, manipulation, AI origin and content credentials. Everything runs locally in your browser.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%235b5bd6'/%3E%3Ccircle cx='14' cy='14' r='7' stroke='white' stroke-width='3' fill='none'/%3E%3Cpath d='M19 19l7 7' stroke='white' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="top">
+    <div class="brand">
+      <span class="logo" aria-hidden="true">
+        <svg viewBox="0 0 32 32" width="22" height="22"><circle cx="14" cy="14" r="7" stroke="currentColor" stroke-width="3" fill="none"/><path d="M19 19l7 7" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg>
+      </span>
+      <div>
+        <h1>Provenance Inspector</h1>
+        <p class="tagline">Is this file what it claims to be? Disguised malware, manipulation, AI origin, content credentials.</p>
+      </div>
+    </div>
+    <p class="privacy"><span aria-hidden="true">🔒</span> Files never leave your browser</p>
+  </header>
+
+  <nav class="tabs" role="tablist" aria-label="Mode">
+    <button role="tab" id="tab-inspect" aria-controls="panel-inspect" aria-selected="true">Inspect a file</button>
+    <button role="tab" id="tab-compare" aria-controls="panel-compare" aria-selected="false" tabindex="-1">Compare with original</button>
+    <button role="tab" id="tab-about" aria-controls="panel-about" aria-selected="false" tabindex="-1">How it works</button>
+  </nav>
+
+  <main id="main">
+    <section id="panel-inspect" role="tabpanel" aria-labelledby="tab-inspect">
+      <label class="drop" id="drop">
+        <input type="file" id="file" class="sr-only">
+        <span class="drop-icon" aria-hidden="true">⬆</span>
+        <strong>Drop a file here or click to choose</strong>
+        <span class="muted">Images, PDFs, Office documents, archives, executables · up to 100 MB</span>
+      </label>
+      <div class="samples">
+        <p class="muted">No file at hand? Try a sample:</p>
+        <div id="samples" class="sample-list"></div>
+      </div>
+      <div id="report" aria-live="polite"></div>
+    </section>
+
+    <section id="panel-compare" role="tabpanel" aria-labelledby="tab-compare" hidden>
+      <p class="muted">Check whether a picture circulating online was altered compared with a known original.</p>
+      <div class="compare-inputs">
+        <label class="drop small" id="drop-a"><input type="file" accept="image/*" class="sr-only" id="file-a"><strong>Original</strong><span class="muted" id="name-a">choose image</span></label>
+        <label class="drop small" id="drop-b"><input type="file" accept="image/*" class="sr-only" id="file-b"><strong>Suspicious copy</strong><span class="muted" id="name-b">choose image</span></label>
+      </div>
+      <div id="compare-out" aria-live="polite"></div>
+    </section>
+
+    <section id="panel-about" role="tabpanel" aria-labelledby="tab-about" hidden></section>
+  </main>
+
+  <footer class="foot">
+    Built with TypeScript, WebAssembly (C2PA SDK) and Web Workers ·
+    <a href="https://github.com/g131908/portfolio/tree/main/provenance-inspector" rel="noopener">Source code</a>
+  </footer>
+  <script type="module" src="./main.ts"></script>
+</body>
+</html>
