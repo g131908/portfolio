@@ -1,0 +1,50 @@
+{
+  "departures": [
+    {
+      "tripId": "1|59505|10|86|18112026",
+      "stop": {"type":"stop","id":"900100003","name":"S+U Alexanderplatz Bhf (Berlin)"},
+      "when": "2026-11-18T18:00:00+01:00", "plannedWhen": "2026-11-18T17:58:00+01:00", "delay": 120,
+      "platform": "1 (U5)", "plannedPlatform": "1 (U5)", "prognosisType": "prognosed", "direction": "Hauptbahnhof",
+      "line": {"type":"line","id":"de-vbb-11000000-u-bahn-u5","name":"U5","product":"subway","mode":"train","color":{"fg":"#fff","bg":"#805233"}},
+      "remarks": [
+        {"type":"hint","code":"OPERATOR","text":"BVG"},
+        {"type":"hint","code":"FK","text":"Bicycle conveyance"},
+        {"type":"hint","code":"text.occup.loc.max.12","text":"medium occupancy expected"}
+      ]
+    },
+    {
+      "tripId": "1|3433|4|86|18112026",
+      "when": "2026-11-18T18:01:00+01:00", "plannedWhen": "2026-11-18T18:01:00+01:00", "delay": 0,
+      "platform": "4", "direction": "S Potsdam Hauptbahnhof",
+      "line": {"type":"line","name":"S7","product":"suburban","color":{"fg":"#fff","bg":"#6d61f2"}},
+      "remarks": [{"type":"hint","code":"text.occup.jny.max.13","text":"high occupancy expected"}]
+    },
+    {
+      "tripId": "1|7777|0|86|18112026",
+      "when": null, "plannedWhen": "2026-11-18T18:04:00+01:00", "delay": null, "cancelled": true,
+      "platform": null, "direction": "S+U Hauptbahnhof",
+      "line": {"type":"line","name":"M5","product":"tram","color":{"fg":"#fff","bg":"#cc0000"}},
+      "remarks": [{"type":"warning","summary":"Construction work: trams replaced by buses","text":"Between Alexanderplatz and Hackescher Markt trams are replaced by buses."}]
+    },
+    {
+      "tripId": "1|8888|0|86|18112026",
+      "when": "2026-11-18T18:07:00+01:00", "plannedWhen": "2026-11-18T18:07:00+01:00",
+      "platform": null, "direction": "S Ostbahnhof",
+      "line": {"type":"line","name":"248","product":"bus"},
+      "remarks": []
+    },
+    {
+      "tripId": "1|9999|0|86|18112026",
+      "when": "2026-11-18T18:15:00+01:00", "plannedWhen": "2026-11-18T18:08:00+01:00", "delay": 420,
+      "platform": "2", "direction": "S Spandau",
+      "line": {"type":"line","name":"RE1","product":"regional","color":{"fg":"#fff","bg":"#e30613"}},
+      "remarks": [{"type":"warning","summary":"Construction work: trams replaced by buses"}]
+    },
+    {
+      "tripId": "broken-no-time",
+      "when": null, "plannedWhen": null,
+      "line": {"name":"X"}, "remarks": []
+    }
+  ],
+  "realtimeDataUpdatedAt": 1795021187
+}

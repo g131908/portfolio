@@ -1,0 +1,5 @@
+{"latitude":52.512604,"longitude":13.419517,"generationtime_ms":0.13,"utc_offset_seconds":3600,"timezone":"Europe/Berlin","timezone_abbreviation":"GMT+1","elevation":38.0,
+ "current_units":{"time":"iso8601","interval":"seconds","temperature_2m":"°C","precipitation":"mm","wind_speed_10m":"km/h","weather_code":"wmo code"},
+ "current":{"time":"2026-11-18T18:00","interval":900,"temperature_2m":10.94,"precipitation":0.00,"wind_speed_10m":25.2,"weather_code":3},
+ "hourly_units":{"time":"iso8601","precipitation_probability":"%"},
+ "hourly":{"time":["2026-11-18T18:00","2026-11-18T19:00"],"precipitation_probability":[58,43]}}

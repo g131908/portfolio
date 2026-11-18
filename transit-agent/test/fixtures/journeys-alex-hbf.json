@@ -1,0 +1,52 @@
+{
+  "earlierRef": "x", "laterRef": "y",
+  "journeys": [
+    {
+      "type": "journey",
+      "legs": [
+        {
+          "origin": {"type":"stop","id":"900100003","name":"S+U Alexanderplatz Bhf (Berlin)","location":{"type":"location","latitude":52.521508,"longitude":13.411267}},
+          "destination": {"type":"stop","id":"900003201","name":"S+U Berlin Hauptbahnhof","location":{"type":"location","latitude":52.525607,"longitude":13.369072}},
+          "departure": "2026-11-18T18:01:00+01:00", "plannedDeparture": "2026-11-18T18:00:00+01:00", "departureDelay": 60,
+          "arrival": "2026-11-18T18:07:00+01:00", "plannedArrival": "2026-11-18T18:06:00+01:00",
+          "direction": "S Potsdam Hauptbahnhof",
+          "line": {"type":"line","name":"S7","product":"suburban","color":{"bg":"#6d61f2"}},
+          "remarks": [{"type":"hint","code":"FK","text":"Bicycle conveyance"}]
+        }
+      ]
+    },
+    {
+      "type": "journey",
+      "legs": [
+        {
+          "origin": {"type":"stop","id":"900100003","name":"S+U Alexanderplatz Bhf (Berlin)"},
+          "destination": {"type":"stop","id":"900100004","name":"S+U Alexanderplatz Bhf/U5"},
+          "departure": "2026-11-18T18:02:00+01:00", "arrival": "2026-11-18T18:05:00+01:00",
+          "walking": true, "distance": 150
+        },
+        {
+          "origin": {"type":"stop","id":"900100004","name":"S+U Alexanderplatz Bhf/U5"},
+          "destination": {"type":"stop","id":"900003201","name":"S+U Berlin Hauptbahnhof"},
+          "departure": "2026-11-18T18:06:00+01:00", "plannedDeparture": "2026-11-18T18:06:00+01:00", "departureDelay": 0,
+          "arrival": "2026-11-18T18:15:00+01:00",
+          "direction": "Hauptbahnhof",
+          "line": {"type":"line","name":"U5","product":"subway"},
+          "remarks": [{"type":"warning","summary":"Lift out of service at Hauptbahnhof"}]
+        }
+      ]
+    },
+    {
+      "type": "journey",
+      "legs": [
+        {
+          "origin": {"type":"stop","id":"900100003","name":"S+U Alexanderplatz Bhf (Berlin)"},
+          "destination": {"type":"stop","id":"900003201","name":"S+U Berlin Hauptbahnhof"},
+          "departure": "2026-11-18T18:04:00+01:00", "arrival": "2026-11-18T18:12:00+01:00",
+          "cancelled": true,
+          "line": {"type":"line","name":"M5","product":"tram"}
+        }
+      ]
+    }
+  ],
+  "realtimeDataUpdatedAt": 1795021187
+}
