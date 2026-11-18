@@ -1,0 +1,36 @@
+{
+  "name": "berlin-transit-agent",
+  "version": "1.0.0",
+  "description": "Live Berlin public transport data as an AI agent, an MCP server and a web dashboard",
+  "type": "module",
+  "private": true,
+  "license": "MIT",
+  "bin": {
+    "berlin-transit-mcp": "dist/mcp-server.js"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build:web": "vite build",
+    "build:mcp": "esbuild src/mcp/main.ts --bundle --platform=node --format=esm --target=node20 --outfile=dist/mcp-server.js --banner:js=\"#!/usr/bin/env node\"",
+    "build": "npm run typecheck && npm run build:web && npm run build:mcp",
+    "mcp": "tsx src/mcp/main.ts",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.32.2",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.6",
+    "esbuild": "^0.28.2",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.8",
+    "vitest": "^5.1.1"
+  }
+}
